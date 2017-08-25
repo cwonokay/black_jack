@@ -9,43 +9,30 @@
    write your logic.
 */
 
+// fixed
 
+  function handValue (hand) {
+    let player = hand;
+    let playerHand = 0;
 
-function handValue (hand) {
+  for (var i = 0; i < player.length; i++) {
 
-  let player = hand;
-  let playerHand = 0;
-
-for (var i = 0; i < player.length; i++) {
-
-  if (player[i]=== "K" ||player[i]=== "Q" || player[i]=== "J" ) {
-    console.log(player);
-    player[i] = 10;
-    playerHand += 10;
-  }else if(player[i] == "A" && playerHand <= 10){
-       playerHand += 11;
-     }else if(player[i] == "A" && playerHand > 10){
-       playerHand += 1;
-       else if (player[i] === "A" && playerHand ) {
+    if (player[i]=== "K" ||player[i]=== "Q" || player[i]=== "J" ) {
+      console.log(player);
+      player[i] = 10;
+      playerHand += 10;
+    }else if(player[i] == "A" && playerHand <= 10){
+         playerHand += 11;
+       }else if(player[i] == "A" && playerHand > 10){
          playerHand += 1;
+       } else if (player[i] === "A" && playerHand > "A" ) {
+           playerHand += 1;
+         }else{
+          playerHand += parseInt(player[i]);
+         }
        }
-        else{
-       playerHand += parseInt(player[i]);
-   }
-
+       if(playerHand > 21){
+         playerHand -= 10;
+  }
+  return playerHand;
 }
-return playerHand;
-}
-
-
-
-
-
-
-/* -----  Hints ------
-
-1..10   ==> Worth face value (1 = 1, 4 = 4, etc)
-K, Q, J ==> Worth 10
-A       ==> Worth 1 or 11
-
-*/
